@@ -347,26 +347,57 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            switch (this.state)
-            {
-                case State.InChat:
-                    if (input == Commands.TrustCommand)
-                    {
-                        this.TrustCurrentUser();
-                        break;
-                    }
 
-                    await this.SendMessage(input);
-                    break;
+            if (this.state == State.InChat)
+            {
+                await this.SendMessage(input);
             }
+        }
+
+        private async Task SendMessage(string message)
+        {
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                return;
+            }
+
+            message = message.Trim();
+
+            var encryptedMessage = this.communicationsManager.EncryptMessage(message);
+
+            await this.connection.InvokeCoreAsync("SendMessage", new object[]
+            {
+                encryptedMessage
+            });
         }
 
         private void TrustCurrentUser()
         {
             bool result = this.TrustUser(this.otherUser);
 
-            Console.WriteLine(result ? Messages.UserTrusted : Messages.CouldNotTrustUser);
+            richCommunication.AppendText(result ? Messages.UserTrusted + "\n": Messages.CouldNotTrustUser + "\n");
             btnTrust.Enabled = false;
+        }
+
+        private bool TrustUser(User user)
+        {
+            if (user == null)
+            {
+                return false;
+            }
+
+            if (this.configurationManager.Configuration.TrustedUsers.ContainsKey(user.Username))
+            {
+                return false;
+            }
+
+            string keyHash = HashingUtil.GetSha256Hash(user.PublicKey);
+
+            this.configurationManager.Configuration.TrustedUsers.Add(user.Username, keyHash);
+
+            this.configurationManager.SaveChanges();
+
+            return true;
         }
 
 
