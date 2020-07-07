@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{AD611021-925E-47F5-A17C-2A60D1E30EC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{C90B20E3-F393-4949-8590-E482A254E6DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptedChat.Client.Common", "EncryptedChat.Client.Common\EncryptedChat.Client.Common.csproj", "{269D0648-0AE7-4BB8-8667-33DA7572EB59}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptedChat.Client.App", "EncryptedChat.Client.App\EncryptedChat.Client.App.csproj", "{49A1A5D9-8548-46E8-BDBA-DDB1B730FA50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptedChat.Server.Web", "EncryptedChat.Server.Web\EncryptedChat.Server.Web.csproj", "{F8DA51D2-4560-4E94-B7CC-20A20E504492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{D8AE9593-05E0-4691-98A8-412CE1369E89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{269D0648-0AE7-4BB8-8667-33DA7572EB59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269D0648-0AE7-4BB8-8667-33DA7572EB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269D0648-0AE7-4BB8-8667-33DA7572EB59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269D0648-0AE7-4BB8-8667-33DA7572EB59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A1A5D9-8548-46E8-BDBA-DDB1B730FA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A1A5D9-8548-46E8-BDBA-DDB1B730FA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A1A5D9-8548-46E8-BDBA-DDB1B730FA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A1A5D9-8548-46E8-BDBA-DDB1B730FA50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8DA51D2-4560-4E94-B7CC-20A20E504492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DA51D2-4560-4E94-B7CC-20A20E504492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DA51D2-4560-4E94-B7CC-20A20E504492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DA51D2-4560-4E94-B7CC-20A20E504492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8AE9593-05E0-4691-98A8-412CE1369E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8AE9593-05E0-4691-98A8-412CE1369E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8AE9593-05E0-4691-98A8-412CE1369E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8AE9593-05E0-4691-98A8-412CE1369E89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{269D0648-0AE7-4BB8-8667-33DA7572EB59} = {AD611021-925E-47F5-A17C-2A60D1E30EC5}
+		{49A1A5D9-8548-46E8-BDBA-DDB1B730FA50} = {AD611021-925E-47F5-A17C-2A60D1E30EC5}
+		{F8DA51D2-4560-4E94-B7CC-20A20E504492} = {C90B20E3-F393-4949-8590-E482A254E6DD}
+		{D8AE9593-05E0-4691-98A8-412CE1369E89} = {AD611021-925E-47F5-A17C-2A60D1E30EC5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC209E9E-35B9-4916-AA55-3F08E27B1BDC}
+	EndGlobalSection
+EndGlobal
