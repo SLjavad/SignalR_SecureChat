@@ -361,6 +361,14 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void TrustCurrentUser()
+        {
+            bool result = this.TrustUser(this.otherUser);
+
+            Console.WriteLine(result ? Messages.UserTrusted : Messages.CouldNotTrustUser);
+            btnTrust.Enabled = false;
+        }
+
 
         private async void btnJoinWait_Click(object sender, EventArgs e)
         {
@@ -373,6 +381,14 @@ namespace WindowsFormsApp1
             {
                 User inputUser = (User)lstUsers.SelectedValue;
                 await this.UserSelect(inputUser);
+            }
+        }
+
+        private void btnTrust_Click(object sender, EventArgs e)
+        {
+            if (this.state == State.InChat)
+            {
+                this.TrustCurrentUser();
             }
         }
     }

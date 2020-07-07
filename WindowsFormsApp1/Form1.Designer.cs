@@ -81,6 +81,7 @@
             this.btnTrust.TabIndex = 1;
             this.btnTrust.Text = "Trust This User";
             this.btnTrust.UseVisualStyleBackColor = true;
+            this.btnTrust.Click += new System.EventHandler(this.btnTrust_Click);
             // 
             // btnJoinWait
             // 
