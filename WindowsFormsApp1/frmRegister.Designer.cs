@@ -37,7 +37,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsername.Location = new System.Drawing.Point(230, 124);
+            this.txtUsername.Location = new System.Drawing.Point(221, 169);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(161, 29);
             this.txtUsername.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(120, 127);
+            this.label1.Location = new System.Drawing.Point(111, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 21);
             this.label1.TabIndex = 1;
@@ -55,11 +55,10 @@
             // 
             // lblMessage
             // 
-            this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMessage.Location = new System.Drawing.Point(12, 9);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(43, 21);
+            this.lblMessage.Size = new System.Drawing.Size(519, 139);
             this.lblMessage.TabIndex = 1;
             this.lblMessage.Text = "label";
             this.lblMessage.Click += new System.EventHandler(this.label1_Click);
@@ -67,7 +66,7 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(268, 200);
+            this.btnOK.Location = new System.Drawing.Point(266, 216);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 2;

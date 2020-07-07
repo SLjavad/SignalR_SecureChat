@@ -85,7 +85,6 @@
             // 
             // btnJoinWait
             // 
-            this.btnJoinWait.Enabled = false;
             this.btnJoinWait.Location = new System.Drawing.Point(40, 411);
             this.btnJoinWait.Name = "btnJoinWait";
             this.btnJoinWait.Size = new System.Drawing.Size(112, 26);

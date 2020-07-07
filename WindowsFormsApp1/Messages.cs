@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         public const string UserListHeader = "Users:";
         public const string UserListItem = "{0} - {1} {2}";
         public const string UserListInvalidUsername = "Not showing {0} user{1} with an invalid username.";
-        public const string UserListJoin = "0 - join waiting list";
+        public const string UserListJoin = "{0} - join waiting list";
         public const string UserTrustedBadge = "[trusted]";
         public const string UserNotTrustedBadge = "[not trusted]";
         public const string UserListNoUsers = "None";

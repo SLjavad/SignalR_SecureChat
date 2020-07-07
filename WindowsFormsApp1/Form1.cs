@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Setup();
         }
 
 
@@ -42,9 +42,9 @@ namespace WindowsFormsApp1
         {
             this.username = this.configurationManager.Configuration.Username;
 
-            Regex usernameRegex = new Regex(Constants.UsernameRegex);
+            //Regex usernameRegex = new Regex(Constants.UsernameRegex);
 
-            if (!string.IsNullOrWhiteSpace(this.username) && usernameRegex.IsMatch(this.username))
+            if (!string.IsNullOrWhiteSpace(this.username))
             {
                 return;
             }
@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             frmRegister frmRegister = new frmRegister(Messages.UsernameInfo);
             if (frmRegister.ShowDialog() == DialogResult.OK)
             {
-                if (string.IsNullOrWhiteSpace(frmRegister.Username) || !usernameRegex.IsMatch(frmRegister.Username))
+                if (!string.IsNullOrWhiteSpace(frmRegister.Username))
                 {
                     this.username = frmRegister.Username;
                     this.configurationManager.Configuration.Username = this.username;
@@ -103,11 +103,10 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            Regex usernameRegex = new Regex(Constants.UsernameRegex);
+            //Regex usernameRegex = new Regex(Constants.UsernameRegex);
 
             this.waitingUsers = users.Where(user =>
-                    !string.IsNullOrWhiteSpace(user.Username) &&
-                    usernameRegex.IsMatch(user.Username))
+                    !string.IsNullOrWhiteSpace(user.Username))
                 .ToArray();
 
             int invalidUsernamesDifference = users.Length - this.waitingUsers.Length;
@@ -148,7 +147,7 @@ namespace WindowsFormsApp1
                     invalidUsernamesDifference != 1 ? "s" : "") + "\n");
             }
 
-            richCommunication.AppendText(Messages.UserListJoin + "\n");
+            richCommunication.AppendText(string.Format(Messages.UserListJoin,this.waitingUsers.Length) + "\n");
         }
 
         private void Disconnect()
@@ -162,9 +161,9 @@ namespace WindowsFormsApp1
         {
             this.state = State.InChat;
 
-            Regex usernameRegex = new Regex(Constants.UsernameRegex);
+            //Regex usernameRegex = new Regex(Constants.UsernameRegex);
 
-            if (string.IsNullOrWhiteSpace(user.Username) || !usernameRegex.IsMatch(user.Username))
+            if (string.IsNullOrWhiteSpace(user.Username))
             {
                 richCommunication.AppendText(Messages.OtherUsernameInvalid + "\n");
                 this.Disconnect();
@@ -255,10 +254,6 @@ namespace WindowsFormsApp1
             richCommunication.AppendText(Messages.Connected + "\n");
         }
 
-        private async Task StartReadingInput()
-        {
-
-        }
 
         private void LoadConfiguration()
         {
@@ -280,8 +275,6 @@ namespace WindowsFormsApp1
             await this.SetUpConnection();
 
             this.state = State.SelectingUser;
-
-            await this.StartReadingInput();
         }
 
         private async Task JoinAsWaitingUser()
@@ -351,6 +344,8 @@ namespace WindowsFormsApp1
             if (this.state == State.InChat)
             {
                 await this.SendMessage(input);
+                richMessage.Clear();
+                richCommunication.AppendText("Me : " + input + "\n");
             }
         }
 
