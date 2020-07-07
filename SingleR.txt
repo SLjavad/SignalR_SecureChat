@@ -1,0 +1,1 @@
+With Azure SignalR Service, adding real-time communications to your web application is as simple as provisioning a service—no need to be a real-time communications guru!
